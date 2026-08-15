@@ -1,67 +1,66 @@
 ---
 import Layout from "../layouts/Layout.astro";
-const base = import.meta.env.BASE_URL.endsWith("/")
-  ? import.meta.env.BASE_URL
-  : `${import.meta.env.BASE_URL}/`;
+import ImpactExplorer from "../components/ImpactExplorer";
+import type { ImpactRegion } from "../components/WorldMap";
+import data from "../data/data.json";
+import impacts from "../data/impacts.json";
+
+const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+const regions = impacts.regions as ImpactRegion[];
+const monthly = data.indices.monthly;
+const latest = data.oni.latest;
+const format = (value: number) => `${value > 0 ? "+" : ""}${value.toFixed(2)}°C`;
+const meters = [
+  ["Niño 1+2", monthly.nino12, "Far eastern Pacific"],
+  ["Niño 3", monthly.nino3, "Eastern Pacific"],
+  ["Niño 3.4", monthly.nino34, "Main tracking area"],
+  ["Niño 4", monthly.nino4, "Western Pacific"],
+];
 ---
 
-<Layout
-  title="El Niño 2026"
-  description="A simple, plain-language overview of current El Niño conditions and the latest outlook."
->
-  <div class="max-w-3xl">
-    <section id="statusBox" class="alert alert--info mb-8" aria-live="polite" aria-label="Current El Niño status">
-      <div class="alert__title">
-        <span aria-hidden="true">&#9889;</span>
-        <span id="statusLabel">Loading status...</span>
-      </div>
-      <p id="statusMeaning" class="alert__body">Reading the latest update...</p>
-      <p id="statusWhen" class="mt-2 text-2xs text-muted"></p>
+<Layout title="El Niño 2026" description="A visual, plain-language overview of current El Niño conditions and regional patterns around the world.">
+  <div class="max-w-6xl">
+    <section class="alert alert--info mb-8" aria-label="Current El Niño status">
+      <div class="alert__title"><span aria-hidden="true">&#9889;</span><span>{data.status.label}</span></div>
+      <p class="alert__body">El Niño conditions are present and likely to continue.</p>
+      <p class="mt-2 text-2xs text-muted">Issued {data.status.issued}. Next update expected {data.status.next}.</p>
     </section>
 
-    <section class="mb-10" aria-labelledby="atGlanceHeading">
-      <h2 id="atGlanceHeading" class="mb-4 text-xl font-bold text-primary-darker">El Niño at a glance</h2>
-      <div id="summaryList" class="grid gap-3 sm:grid-cols-3">
-        <div class="border border-gray-20 p-4">Loading...</div>
+    <section class="mb-10" aria-labelledby="glanceHeading">
+      <div class="mb-4"><p class="mb-1 text-2xs font-bold uppercase tracking-wide text-primary">The big picture</p><h2 id="glanceHeading" class="text-xl font-bold text-primary-darker">What is happening now?</h2></div>
+      <div class="grid gap-3 sm:grid-cols-3">
+        <div class="border border-gray-20 bg-white p-4"><strong class="block font-mono text-xl text-primary-darker">{format(monthly.nino34)}</strong><span class="mt-1 block text-sm font-bold">Niño 3.4</span><span class="mt-1 block text-2xs text-muted">Ocean temperature difference</span></div>
+        <div class="border border-gray-20 bg-white p-4"><strong class="block font-mono text-xl text-primary-darker">{format(latest.anomaly)}</strong><span class="mt-1 block text-sm font-bold">Latest ONI</span><span class="mt-1 block text-2xs text-muted">{latest.season} average</span></div>
+        <div class="border border-gray-20 bg-white p-4"><strong class="block font-mono text-xl text-primary-darker">{data.forecast.prob}%</strong><span class="mt-1 block text-sm font-bold">Chance it continues</span><span class="mt-1 block text-2xs text-muted">Forecast models</span></div>
       </div>
     </section>
 
-    <section class="mb-10 max-w-2xl">
-      <h2 class="mb-3 text-xl font-bold text-primary-darker">What is happening?</h2>
-      <p class="prose-body">
-        El Niño is a natural warming of the Pacific Ocean near the equator. It can
-        shift rain, storms, and temperatures around the world.
-      </p>
-      <p class="mt-3 prose-body">
-        It changes the odds of certain weather, but it does not predict the weather
-        in a specific town.
-      </p>
+    <section class="mb-10" aria-labelledby="impactHeading">
+      <div class="mb-4 flex items-end justify-between gap-4">
+        <div>
+          <p class="mb-1 text-2xs font-bold uppercase tracking-wide text-primary">Around the world</p>
+          <h2 id="impactHeading" class="text-xl font-bold text-primary-darker">Where El Niño usually shows up</h2>
+          <p class="mt-1 max-w-2xl text-sm text-muted">Typical tendencies, not local forecasts. Pick a season to compare hemispheres.</p>
+        </div>
+        <a href={`${base}regions/`} class="hidden text-2xs sm:block">Full explorer</a>
+      </div>
+      <ImpactExplorer client:load regions={regions} />
     </section>
 
-    <section aria-labelledby="nextHeading">
-      <h2 id="nextHeading" class="mb-4 text-xl font-bold text-primary-darker">Explore the tracker</h2>
-      <div class="grid gap-3 sm:grid-cols-2">
-        <a href={`${base}learn/`} class="border border-gray-20 p-4 no-underline hover:bg-blue-5">
-          <strong class="block text-md text-primary">Learn about El Niño</strong>
-          <span class="mt-1 block text-sm text-ink">A short guide to the science and the terms.</span>
-        </a>
-        <a href={`${base}outlook/`} class="border border-gray-20 p-4 no-underline hover:bg-blue-5">
-          <strong class="block text-md text-primary">See the outlook</strong>
-          <span class="mt-1 block text-sm text-ink">What forecast models say may happen next.</span>
-        </a>
-        <a href={`${base}regions/`} class="border border-gray-20 p-4 no-underline hover:bg-blue-5">
-          <strong class="block text-md text-primary">Check regional notes</strong>
-          <span class="mt-1 block text-sm text-ink">Current notes from the NOAA advisory.</span>
-        </a>
-        <a href={`${base}data/`} class="border border-gray-20 p-4 no-underline hover:bg-blue-5">
-          <strong class="block text-md text-primary">View the data</strong>
-          <span class="mt-1 block text-sm text-ink">Ocean temperatures and the recent trend.</span>
-        </a>
+    <section class="mb-10" aria-labelledby="metersHeading">
+      <div class="mb-4"><p class="mb-1 text-2xs font-bold uppercase tracking-wide text-primary">Pacific Ocean</p><h2 id="metersHeading" class="text-xl font-bold text-primary-darker">Where the signal is strongest</h2><p class="mt-1 max-w-2xl text-sm text-muted">Warmer than average is shown in orange.</p></div>
+      <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        {meters.map(([name, value, note]) => <div class="border border-gray-20 bg-white p-4"><div class="flex items-baseline justify-between gap-2"><strong class="text-sm">{name}</strong><span class="font-mono text-sm font-bold text-warm-deep">{format(value as number)}</span></div><div class="mt-3 h-3 overflow-hidden bg-gray-10"><div class="h-full bg-warm-deep" style={`width:${Math.min(100, Math.max(8, ((value as number) / 3.5) * 100))}%`} /></div><p class="mt-2 text-2xs text-muted">{note}</p></div>)}
+      </div>
+    </section>
+
+    <section class="mb-10" aria-labelledby="timelineHeading">
+      <div class="mb-4"><p class="mb-1 text-2xs font-bold uppercase tracking-wide text-primary">The next year</p><h2 id="timelineHeading" class="text-xl font-bold text-primary-darker">A simple seasonal view</h2></div>
+      <div class="grid gap-3 sm:grid-cols-3">
+        <div class="border-l-4 border-primary bg-blue-5 p-4"><strong class="block text-md">Now</strong><span class="mt-1 block text-sm">El Niño is present in the Pacific.</span></div>
+        <div class="border-l-4 border-warm bg-warn-bg p-4"><strong class="block text-md">Next season</strong><span class="mt-1 block text-sm">Models expect it to continue.</span></div>
+        <div class="border-l-4 border-gray-40 bg-gray-5 p-4"><strong class="block text-md">Further ahead</strong><span class="mt-1 block text-sm">Confidence falls over time.</span></div>
       </div>
     </section>
   </div>
-
-  <script>
-    import "../scripts/tracker.js";
-  </script>
 </Layout>

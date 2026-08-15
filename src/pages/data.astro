@@ -1,20 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import data from "../data/data.json";
+
+const monthly = data.indices.monthly;
+const format = (value: number) => `${value > 0 ? "+" : ""}${value.toFixed(2)}°C`;
+const rows = [["Niño 1+2", monthly.nino12, "Far eastern Pacific"], ["Niño 3", monthly.nino3, "Eastern Pacific"], ["Niño 3.4", monthly.nino34, "Main tracking area"], ["Niño 4", monthly.nino4, "Western Pacific"]];
 ---
 
 <Layout title="El Niño data" description="Current Niño region temperatures and recent ONI data from public NOAA sources.">
-  <article class="max-w-4xl">
-    <p class="mb-2 text-2xs font-bold uppercase tracking-wide text-primary">The numbers</p>
-    <h2 class="mb-3 text-2xl font-bold text-primary-darker">Ocean data</h2>
-    <p class="mb-8 max-w-2xl prose-body">These temperatures show how much warmer or cooler the ocean is than average for this time of year.</p>
-    <section class="mb-10" aria-labelledby="oceanHeading">
-      <h3 id="oceanHeading" class="mb-4 text-xl font-bold text-primary-darker">Current Niño regions</h3>
-      <div class="overflow-x-auto border border-gray-20"><table class="site-table"><thead><tr><th scope="col">Region</th><th scope="col">Difference from average</th><th scope="col">Location</th></tr></thead><tbody id="indicesBody"><tr><td colspan="3">Loading...</td></tr></tbody></table></div>
-    </section>
-    <section aria-labelledby="dataTrendHeading">
-      <h3 id="dataTrendHeading" class="mb-4 text-xl font-bold text-primary-darker">Recent ONI values</h3>
-      <div id="oniChart" class="rounded-sm border border-gray-20 bg-white p-4"></div>
-    </section>
+  <article class="max-w-4xl"><p class="mb-2 text-2xs font-bold uppercase tracking-wide text-primary">The numbers</p><h2 class="mb-3 text-2xl font-bold text-primary-darker">Ocean data</h2><p class="mb-8 max-w-2xl prose-body">These measurements show how much warmer or cooler the ocean is than average.</p>
+    <section class="mb-10"><h3 class="mb-4 text-xl font-bold text-primary-darker">Current Niño regions</h3><div class="overflow-x-auto border border-gray-20"><table class="site-table"><thead><tr><th scope="col">Region</th><th scope="col">Difference</th><th scope="col">Location</th></tr></thead><tbody>{rows.map(([name, value, location]) => <tr><td class="font-bold">{name}</td><td class="num text-warm-deep">{format(value as number)}</td><td>{location}</td></tr>)}</tbody></table></div></section>
+    <section><h3 class="mb-4 text-xl font-bold text-primary-darker">Data notes</h3><div class="border border-gray-20 bg-gray-5 p-4 text-sm"><p>Source: NOAA Climate Prediction Center.</p><p class="mt-2">Updated: {data.fetchedAt}.</p><p class="mt-2">An anomaly is the difference from the long-term average.</p></div></section>
   </article>
-  <script>import "../scripts/tracker.js";</script>
 </Layout>

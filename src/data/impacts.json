@@ -1,0 +1,214 @@
+{
+  "dataType": "typical-pattern",
+  "source": "NOAA Climate.gov global impacts of El Niño and La Niña; NOAA JetStream ENSO weather impacts; NOAA CPC composites",
+  "retrievedAt": "2026-08-15",
+  "note": "These are broad historical tendencies, not local forecasts and not guarantees. Impacts vary event to event. Only regions with a documented major seasonal effect are shown.",
+  "phases": ["el-nino", "la-nina"],
+  "seasons": ["DJF", "MAM", "JJA", "SON"],
+  "regions": [
+    {
+      "id": "california-southwest-us",
+      "name": "Southwest United States and California",
+      "hemisphere": "north",
+      "confidence": "common",
+      "shape": { "type": "Polygon", "coordinates": [[[-124.5, 42.5], [-122.5, 36.0], [-117.0, 32.6], [-105.0, 31.4], [-103.0, 37.0], [-110.0, 42.5]]] },
+      "signals": {
+        "el-nino": { "DJF": ["wetter"], "MAM": [], "JJA": [], "SON": ["drier"] },
+        "la-nina": { "DJF": ["drier"], "MAM": [], "JJA": [], "SON": ["wetter"] }
+      },
+      "notes": { "el-nino": { "DJF": "Winters often bring more rain, especially to California." }, "la-nina": { "DJF": "Winters are often drier." } },
+      "sources": ["Climate.gov global impacts map", "CPC composites"]
+    },
+    {
+      "id": "southern-us",
+      "name": "Southern United States",
+      "hemisphere": "north",
+      "confidence": "common",
+      "shape": { "type": "Polygon", "coordinates": [[[-103.0, 37.0], [-80.0, 36.0], [-78.0, 31.0], [-82.0, 25.0], [-97.0, 26.0], [-103.0, 31.4]]] },
+      "signals": {
+        "el-nino": { "DJF": ["wetter", "cooler"], "MAM": [], "JJA": [], "SON": [] },
+        "la-nina": { "DJF": ["drier", "warmer"], "MAM": [], "JJA": [], "SON": [] }
+      },
+      "notes": { "el-nino": { "DJF": "Wetter and cooler winters are the classic signal." } },
+      "sources": ["Climate.gov global impacts map", "CPC composites"]
+    },
+    {
+      "id": "northern-us-canada",
+      "name": "Northern United States and Canada",
+      "hemisphere": "north",
+      "confidence": "mixed",
+      "shape": { "type": "Polygon", "coordinates": [[[-125.0, 49.0], [-95.0, 49.0], [-66.0, 48.0], [-60.0, 50.0], [-60.0, 62.0], [-110.0, 62.0], [-125.0, 62.0]]] },
+      "signals": {
+        "el-nino": { "DJF": ["warmer"], "MAM": [], "JJA": [], "SON": [] },
+        "la-nina": { "DJF": ["cooler"], "MAM": [], "JJA": [], "SON": [] }
+      },
+      "sources": ["Climate.gov global impacts map"]
+    },
+    {
+      "id": "central-america-caribbean",
+      "name": "Central America and Caribbean",
+      "hemisphere": "north",
+      "confidence": "mixed",
+      "shape": { "type": "Polygon", "coordinates": [[[-92.0, 18.0], [-83.0, 10.0], [-78.0, 9.0], [-60.0, 12.0], [-60.0, 25.0], [-82.0, 25.0], [-90.0, 22.0]]] },
+      "signals": {
+        "el-nino": { "DJF": ["drier"], "MAM": ["drier"], "JJA": ["drier"], "SON": [] },
+        "la-nina": { "DJF": ["wetter"], "MAM": ["wetter"], "JJA": ["wetter"], "SON": [] }
+      },
+      "sources": ["Climate.gov global impacts map"]
+    },
+    {
+      "id": "northern-south-america",
+      "name": "Northern South America",
+      "hemisphere": "south",
+      "confidence": "common",
+      "shape": { "type": "Polygon", "coordinates": [[[-80.0, 12.0], [-70.0, 12.0], [-45.0, 5.0], [-45.0, -8.0], [-60.0, -10.0], [-75.0, -5.0], [-80.0, 8.0]]] },
+      "signals": {
+        "el-nino": { "DJF": [], "MAM": [], "JJA": ["drier"], "SON": ["drier"] },
+        "la-nina": { "DJF": [], "MAM": [], "JJA": ["wetter"], "SON": ["wetter"] }
+      },
+      "sources": ["Climate.gov global impacts map", "CPC composites"]
+    },
+    {
+      "id": "peru-ecuador-coast",
+      "name": "Peru and Ecuador coast",
+      "hemisphere": "south",
+      "confidence": "common",
+      "shape": { "type": "Polygon", "coordinates": [[[-84.0, -2.0], [-78.0, -6.0], [-74.0, -16.0], [-76.0, -18.0], [-81.0, -5.0]]] },
+      "signals": {
+        "el-nino": { "DJF": ["wetter", "warmer"], "MAM": ["wetter"], "JJA": [], "SON": [] },
+        "la-nina": { "DJF": ["drier"], "MAM": ["drier"], "JJA": [], "SON": [] }
+      },
+      "notes": { "el-nino": { "DJF": "The classic very-wet El Niño coast, heaviest in austral summer." } },
+      "sources": ["Climate.gov global impacts map", "CPC composites"]
+    },
+    {
+      "id": "southeastern-south-america",
+      "name": "Southeastern South America",
+      "hemisphere": "south",
+      "confidence": "common",
+      "shape": { "type": "Polygon", "coordinates": [[[-65.0, -30.0], [-60.0, -33.0], [-52.0, -33.0], [-40.0, -28.0], [-42.0, -20.0], [-55.0, -25.0], [-62.0, -27.0]]] },
+      "signals": {
+        "el-nino": { "DJF": ["wetter"], "MAM": ["wetter"], "JJA": [], "SON": ["wetter"] },
+        "la-nina": { "DJF": ["drier"], "MAM": ["drier"], "JJA": [], "SON": ["drier"] }
+      },
+      "notes": { "el-nino": { "SON": "The wetter signal often begins in austral spring (Sep-Nov) and runs through summer." } },
+      "sources": ["Climate.gov global impacts map", "CPC composites"]
+    },
+    {
+      "id": "central-chile-argentina",
+      "name": "Central Chile and Argentina",
+      "hemisphere": "south",
+      "confidence": "mixed",
+      "shape": { "type": "Polygon", "coordinates": [[[-76.0, -30.0], [-70.0, -28.0], [-65.0, -32.0], [-68.0, -45.0], [-73.0, -45.0]]] },
+      "signals": {
+        "el-nino": { "DJF": ["drier"], "MAM": [], "JJA": ["wetter"], "SON": [] },
+        "la-nina": { "DJF": ["wetter"], "MAM": [], "JJA": ["drier"], "SON": [] }
+      },
+      "notes": { "el-nino": { "JJA": "Central Chile often wetter in austral winter." } },
+      "sources": ["Climate.gov global impacts map"]
+    },
+    {
+      "id": "indonesia-malaysia",
+      "name": "Indonesia, Malaysia, and western Pacific",
+      "hemisphere": "both",
+      "confidence": "common",
+      "shape": { "type": "Polygon", "coordinates": [[[95.0, 6.0], [110.0, 6.0], [130.0, 4.0], [140.0, -8.0], [125.0, -10.0], [105.0, -5.0], [95.0, -2.0]]] },
+      "signals": {
+        "el-nino": { "DJF": ["drier"], "MAM": ["drier"], "JJA": ["drier"], "SON": ["drier"] },
+        "la-nina": { "DJF": ["wetter"], "MAM": ["wetter"], "JJA": ["wetter"], "SON": ["wetter"] }
+      },
+      "notes": { "el-nino": { "DJF": "Rain and storm activity are often lower through much of the year." } },
+      "sources": ["Climate.gov global impacts map", "CPC composites"]
+    },
+    {
+      "id": "australia-east",
+      "name": "Eastern Australia",
+      "hemisphere": "south",
+      "confidence": "common",
+      "shape": { "type": "Polygon", "coordinates": [[[138.0, -35.0], [150.0, -38.0], [153.0, -32.0], [153.0, -18.0], [145.0, -15.0], [138.0, -25.0]]] },
+      "signals": {
+        "el-nino": { "DJF": ["drier"], "MAM": [], "JJA": [], "SON": ["drier"] },
+        "la-nina": { "DJF": ["wetter"], "MAM": [], "JJA": [], "SON": ["wetter"] }
+      },
+      "notes": { "el-nino": { "SON": "Dry signal often starts in austral spring." } },
+      "sources": ["Climate.gov global impacts map", "Bureau of Meteorology"]
+    },
+    {
+      "id": "australia-north-west",
+      "name": "Northern and western Australia",
+      "hemisphere": "south",
+      "confidence": "mixed",
+      "shape": { "type": "Polygon", "coordinates": [[[112.0, -22.0], [115.0, -15.0], [128.0, -12.0], [140.0, -16.0], [138.0, -24.0], [125.0, -25.0]]] },
+      "signals": {
+        "el-nino": { "DJF": ["drier"], "MAM": [], "JJA": [], "SON": [] },
+        "la-nina": { "DJF": ["wetter"], "MAM": [], "JJA": [], "SON": [] }
+      },
+      "sources": ["Climate.gov global impacts map", "Bureau of Meteorology"]
+    },
+    {
+      "id": "southern-africa",
+      "name": "Southern Africa",
+      "hemisphere": "south",
+      "confidence": "common",
+      "shape": { "type": "Polygon", "coordinates": [[[12.0, -33.0], [30.0, -34.0], [40.0, -30.0], [40.0, -18.0], [30.0, -16.0], [20.0, -20.0]]] },
+      "signals": {
+        "el-nino": { "DJF": ["drier"], "MAM": ["drier"], "JJA": [], "SON": [] },
+        "la-nina": { "DJF": ["wetter"], "MAM": ["wetter"], "JJA": [], "SON": [] }
+      },
+      "notes": { "el-nino": { "DJF": "Summer rainfall is often below normal." } },
+      "sources": ["Climate.gov global impacts map", "CPC composites"]
+    },
+    {
+      "id": "east-africa",
+      "name": "East Africa",
+      "hemisphere": "both",
+      "confidence": "common",
+      "shape": { "type": "Polygon", "coordinates": [[[28.0, -8.0], [35.0, -12.0], [42.0, -2.0], [50.0, 5.0], [42.0, 12.0], [32.0, 8.0]]] },
+      "signals": {
+        "el-nino": { "DJF": ["wetter"], "MAM": [], "JJA": [], "SON": ["wetter"] },
+        "la-nina": { "DJF": ["drier"], "MAM": [], "JJA": [], "SON": ["drier"] }
+      },
+      "notes": { "el-nino": { "SON": "The short-rains season (Oct-Dec) is often wetter." } },
+      "sources": ["Climate.gov global impacts map", "CPC composites"]
+    },
+    {
+      "id": "india-south-asia",
+      "name": "India and South Asia",
+      "hemisphere": "north",
+      "confidence": "common",
+      "shape": { "type": "Polygon", "coordinates": [[[68.0, 24.0], [72.0, 22.0], [80.0, 8.0], [88.0, 20.0], [90.0, 28.0], [80.0, 32.0], [70.0, 30.0]]] },
+      "signals": {
+        "el-nino": { "DJF": [], "MAM": ["warmer"], "JJA": ["drier"], "SON": [] },
+        "la-nina": { "DJF": [], "MAM": [], "JJA": ["wetter"], "SON": [] }
+      },
+      "notes": { "el-nino": { "JJA": "The summer monsoon is often weaker and rainfall below normal." } },
+      "sources": ["Climate.gov global impacts map", "CPC composites"]
+    },
+    {
+      "id": "japan-east-asia",
+      "name": "Japan and East Asia",
+      "hemisphere": "north",
+      "confidence": "mixed",
+      "shape": { "type": "Polygon", "coordinates": [[[100.0, 20.0], [110.0, 20.0], [122.0, 24.0], [132.0, 32.0], [142.0, 36.0], [140.0, 42.0], [130.0, 48.0], [120.0, 48.0], [105.0, 40.0]]] },
+      "signals": {
+        "el-nino": { "DJF": ["cooler"], "MAM": [], "JJA": [], "SON": [] },
+        "la-nina": { "DJF": ["warmer"], "MAM": [], "JJA": [], "SON": [] }
+      },
+      "sources": ["Climate.gov global impacts map"]
+    }
+  ],
+  "cyclones": {
+    "source": "NOAA JetStream, based on data from the Australian Bureau of Meteorology",
+    "note": "How tropical cyclone activity tends to change during El Niño years compared with non-El Niño years.",
+    "rows": [
+      { "region": "North Atlantic", "elNino": "Large decrease in storms", "nonElNino": "Small increase in storms" },
+      { "region": "Eastern North Pacific", "elNino": "Slight increase", "nonElNino": "Slight decrease" },
+      { "region": "Western North Pacific (eastern half)", "elNino": "Increase", "nonElNino": "Decrease" },
+      { "region": "Western North Pacific (western half)", "elNino": "Decrease", "nonElNino": "Increase" },
+      { "region": "Indian Ocean (north and south)", "elNino": "No change", "nonElNino": "No change" },
+      { "region": "Australian region (western)", "elNino": "Slight decrease", "nonElNino": "Slight increase" },
+      { "region": "Australian region (central and east)", "elNino": "Decrease", "nonElNino": "Increase" },
+      { "region": "South and central Pacific", "elNino": "Increase", "nonElNino": "Decrease" }
+    ]
+  }
+}

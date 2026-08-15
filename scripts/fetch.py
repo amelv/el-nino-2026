@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""El Niño 2026 - fetch + parse NOAA/IRI data into data.json.
+"""El Niño 2026 - fetch + parse NOAA/IRI data into src/data/data.json.
 
 Run by GitHub Actions cron (daily). Also runnable locally.
-Idempotent: writes data.json; the workflow only commits when content changes.
+Idempotent: writes src/data/data.json; the workflow only commits when content changes.
 Manual override: if data.override.json exists in repo root, its keys merge over
 auto-fetched values (for narrative text that's brittle to HTML-parse).
 """
@@ -134,10 +134,10 @@ def main():
         failures.append(f"override: {e}")
 
     out["errors"] = failures
-    with open("public/data.json", "w") as f:
+    with open("src/data/data.json", "w") as f:
         json.dump(out, f, indent=2)
         f.write("\n")
-    print(f"public/data.json written. failures: {failures or 'none'}")
+    print(f"src/data/data.json written. failures: {failures or 'none'}")
     print(json.dumps({k: out.get(k) for k in ("status","forecast")}, indent=2)[:600])
 
 if __name__ == "__main__":
