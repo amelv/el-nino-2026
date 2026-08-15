@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>El Niño 2026 — quick status</title>
+<meta name="description" content="A plain-language tracker for the 2026 El Niño event. Data from NOAA Climate Prediction Center.">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          paper: "#f4f1ea",
+          card: "#ffffff",
+          ink: "#1b2430",
+          inksoft: "#4a5560",
+          line: "#d9d2c4",
+          rust: "#c24d2c",
+          rustdeep: "#8f3a22",
+          rustwash: "#f6e3db",
+          ocean: "#2b6a75",
+          oceanwash: "#e0ecee",
+        },
+        fontFamily: {
+          serif: ['"Source Serif 4"', 'Georgia', 'serif'],
+          mono: ['"IBM Plex Mono"', 'monospace'],
+          sans: ['"IBM Plex Sans"', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  @media (prefers-reduced-motion: no-preference) {
+    .pulse { animation: pulse 2.4s ease-in-out infinite; }
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .45; } }
+  }
+</style>
+</head>
+<body class="bg-paper text-ink font-sans antialiased">
+
+  <div class="max-w-2xl mx-auto px-5">
+
+    <header class="py-6 border-b border-line">
+      <p class="font-serif font-semibold text-base">El Niño 2026<span class="text-rust">.</span></p>
+      <p class="font-mono text-[11px] text-inksoft mt-0.5">Plain-language tracker &middot; data: NOAA CPC &middot; updated <span id="issued"></span></p>
+    </header>
+
+    <!-- Status -->
+    <section class="pt-10">
+      <span class="inline-flex items-center gap-2 text-[13px] font-semibold tracking-wide px-3 py-1 rounded-full bg-rustwash text-rustdeep border border-line">
+        <span class="pulse w-2 h-2 rounded-full bg-rust"></span>
+        <span id="status"></span>
+      </span>
+      <h1 class="font-serif font-semibold text-3xl leading-tight tracking-tight mt-4">
+        The Pacific is heating up. Here&rsquo;s what that could mean.
+      </h1>
+      <p class="text-inksoft mt-3 text-[15px]" id="headline"></p>
+      <p class="mt-4 text-[14px] p-4 border-l-[3px] border-rust bg-rustwash rounded-r-md" id="historic"></p>
+    </section>
+
+    <!-- Key index -->
+    <section class="pt-10">
+      <h2 class="font-serif font-semibold text-xl mb-4">The ocean right now</h2>
+      <div class="grid grid-cols-3 gap-3" id="indices"></div>
+      <p class="mt-4 text-[13px] text-inksoft p-4 border border-dashed border-line rounded-md">
+        <span class="font-mono font-medium text-ink"><span id="subAnomaly"></span></span> subsurface temperature anomaly &mdash; <span id="subNote"></span>
+      </p>
+    </section>
+
+    <!-- What it means -->
+    <section class="pt-10">
+      <h2 class="font-serif font-semibold text-xl mb-4">What it could mean</h2>
+      <ul class="text-inksoft text-[14px]" id="impacts"></ul>
+    </section>
+
+    <!-- Sources -->
+    <section class="pt-8 pb-10">
+      <h2 class="font-serif font-semibold text-xl mb-3">Sources</h2>
+      <ul class="text-[13px] space-y-1.5" id="sources"></ul>
+      <p class="mt-6 text-[11px] text-inksoft max-w-[60ch]">
+        Independent, non-commercial tracker. Presents NOAA's public ENSO data in plain language for non-experts. Not a forecast, not affiliated with NOAA. Next diagnostic scheduled: <span id="nextUpdate"></span>.
+      </p>
+    </section>
+
+  </div>
+
+<script>
+var d = {
+  issued: "2026-08-13",
+  nextUpdate: "2026-09-10",
+  status: "El Niño Advisory",
+  headline: "El Niño is strengthening, with a greater than 90% chance of a very strong event during fall and winter 2026-27.",
+  historic: "There is a 69% chance of a historic event exceeding the strength of any El Niño since 1950 (RONI +2.5°C or more).",
+  subAnomaly: "+10.0°C",
+  subNote: "average subsurface anomaly at depth, July",
+  indices: [
+    { region: "Niño-1+2", value: "+2.9°C", note: "far east", key: false },
+    { region: "Niño-3", value: "+1.7°C", note: "east", key: false },
+    { region: "Niño-3.4", value: "+1.4°C", note: "central · the key one", key: true },
+  ],
+  impacts: [
+    "Rainfall shifts: wetter over the central/eastern Pacific and parts of South America; drier over Indonesia and parts of the western Pacific.",
+    "A very strong event can raise global average temperatures, with regional extremes varying by location.",
+    "Droughts and floods in different regions affect planting seasons, reservoirs, and water planning.",
+    "Impacts consistent with El Niño are more likely — but not guaranteed — even for a historic event.",
+  ],
+  sources: [
+    ["NOAA CPC — ENSO Diagnostic Discussion", "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/ensodisc.shtml"],
+    ["NOAA CPC — current El Niño/La Niña conditions", "https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/enso.shtml"],
+    ["CPC official ENSO outlook", "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/outlook/"],
+  ],
+};
+function set(id, t) { document.getElementById(id).textContent = t; }
+set("issued", d.issued);
+set("status", d.status);
+set("headline", d.headline);
+set("historic", d.historic);
+set("subAnomaly", d.subAnomaly);
+set("subNote", d.subNote);
+set("nextUpdate", d.nextUpdate);
+
+var ig = document.getElementById("indices");
+d.indices.forEach(function (idx) {
+  var el = document.createElement("div");
+  el.className = "rounded-md border p-3 " + (idx.key ? "bg-oceanwash border-ocean" : "bg-card border-line");
+  if (idx.key) el.innerHTML = '<p class="text-[10px] uppercase tracking-wider text-ocean font-semibold">key index</p>';
+  el.innerHTML += '<p class="font-mono text-xl font-medium mt-1 ' + (idx.key ? "text-ocean" : "text-rustdeep") + '">' + idx.value + "</p>" +
+                  '<p class="text-[11px] text-inksoft mt-0.5">' + idx.region + " &middot; " + idx.note + "</p>";
+  ig.appendChild(el);
+});
+
+var ul = document.getElementById("impacts");
+d.impacts.forEach(function (t) {
+  var li = document.createElement("li");
+  li.className = "py-2.5 border-b border-line last:border-0 flex gap-3";
+  li.innerHTML = '<span class="mt-2 w-2 h-2 shrink-0 rotate-45 bg-ocean"></span><span>' + t + "</span>";
+  ul.appendChild(li);
+});
+
+var sl = document.getElementById("sources");
+d.sources.forEach(function (s) {
+  var a = document.createElement("a");
+  a.href = s[1]; a.target = "_blank"; a.rel = "noopener";
+  a.className = "text-rustdeep hover:underline";
+  a.textContent = s[0];
+  var li = document.createElement("li");
+  li.appendChild(a);
+  sl.appendChild(li);
+});
+</script>
+</body>
+</html>
