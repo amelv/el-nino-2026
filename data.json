@@ -1,0 +1,85 @@
+{
+  "fetchedAt": "2026-08-15",
+  "sources": {
+    "oni": true,
+    "sstoi": true,
+    "advisory": true,
+    "iri": true
+  },
+  "oni": {
+    "latest": {
+      "season": "MJJ 2026",
+      "anomaly": 1.39
+    },
+    "history": [
+      {
+        "season": "JJA 2025",
+        "anomaly": -0.11
+      },
+      {
+        "season": "JAS 2025",
+        "anomaly": -0.26
+      },
+      {
+        "season": "ASO 2025",
+        "anomaly": -0.43
+      },
+      {
+        "season": "SON 2025",
+        "anomaly": -0.57
+      },
+      {
+        "season": "OND 2025",
+        "anomaly": -0.61
+      },
+      {
+        "season": "NDJ 2025",
+        "anomaly": -0.6
+      },
+      {
+        "season": "DJF 2026",
+        "anomaly": -0.39
+      },
+      {
+        "season": "JFM 2026",
+        "anomaly": -0.21
+      },
+      {
+        "season": "FMA 2026",
+        "anomaly": 0.11
+      },
+      {
+        "season": "MAM 2026",
+        "anomaly": 0.46
+      },
+      {
+        "season": "AMJ 2026",
+        "anomaly": 0.95
+      },
+      {
+        "season": "MJJ 2026",
+        "anomaly": 1.39
+      }
+    ]
+  },
+  "indices": {
+    "monthly": {
+      "month": "2026-07",
+      "nino12": 3.56,
+      "nino3": 2.33,
+      "nino4": 1.06,
+      "nino34": 2.03
+    }
+  },
+  "status": {
+    "label": "El Ni\u00f1o Advisory",
+    "synopsis": "El Ni\u00f1o is strengthening, with a greater than 90% chance of a very strong event during the Northern Hemisphere fall and winter 2026-27.",
+    "issued": "13 August 2026",
+    "next": "10 September 2026"
+  },
+  "forecast": {
+    "probText": "El Ni\u00f1o probabilities are 100% from JAS 2026 through JFM",
+    "prob": 100
+  },
+  "errors": []
+}

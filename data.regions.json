@@ -1,0 +1,61 @@
+{
+  "note": "Region notes are strictly limited to what the current NOAA CPC diagnostic narrative states. No claims are derived from general El Nino knowledge. Regions without explicit current-advisory statements are 'coming soon'. The advisory explicitly notes impacts are 'not guaranteed'.",
+  "regions": [
+    {
+      "id": "central-eastern-pacific",
+      "name": "Central & eastern tropical Pacific",
+      "status": "watch",
+      "impact": "Convection and rainfall were enhanced from the central to eastern equatorial Pacific. Sea surface temperatures exceeded +2.0 deg C in the eastern Pacific. This is the core El Nino signal.",
+      "source": "NOAA CPC diagnostic, 2026-08-13"
+    },
+    {
+      "id": "indonesia",
+      "name": "Indonesia & western Pacific",
+      "status": "watch",
+      "impact": "Convection and rainfall were suppressed over Indonesia. The advisory notes this region's drier signal.",
+      "source": "NOAA CPC diagnostic, 2026-08-13"
+    },
+    {
+      "id": "south-america",
+      "name": "South America",
+      "status": "coming-soon",
+      "impact": "",
+      "source": ""
+    },
+    {
+      "id": "north-america",
+      "name": "North America",
+      "status": "coming-soon",
+      "impact": "",
+      "source": ""
+    },
+    {
+      "id": "africa",
+      "name": "Africa",
+      "status": "coming-soon",
+      "impact": "",
+      "source": ""
+    },
+    {
+      "id": "asia",
+      "name": "Asia",
+      "status": "coming-soon",
+      "impact": "",
+      "source": ""
+    },
+    {
+      "id": "europe",
+      "name": "Europe",
+      "status": "coming-soon",
+      "impact": "",
+      "source": ""
+    },
+    {
+      "id": "general",
+      "name": "General caveat (all regions)",
+      "status": "watch",
+      "impact": "The advisory states that with an event of this magnitude, chances of impacts consistent with El Nino are larger, but they are not guaranteed. Regional impact notes here are limited to what the current advisory states.",
+      "source": "NOAA CPC diagnostic, 2026-08-13"
+    }
+  ]
+}
