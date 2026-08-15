@@ -3,64 +3,124 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>El Niño 2026 — Coming Soon</title>
-<meta name="description" content="A plain-language tracker for the 2026 El Niño event, coming soon. Current status: El Niño Advisory active. Bookmark this page for updates.">
+<title>El Niño 2026</title>
+<meta name="description" content="El Niño 2026 tracker. Current status: El Niño Advisory active. Site under construction. Data source: NOAA Climate Prediction Center.">
 <style>
+  /* USWDS theme color tokens (designsystem.digital.gov) */
   :root {
-    --blue: #0b3d6f;
-    --blue-light: #e6eef6;
-    --ink: #111;
-    --muted: #444;
+    --primary: #005ea2;
+    --primary-dark: #1a4480;
+    --primary-darker: #162e51;
+    --base-darkest: #1b1b1b;
+    --base: #71767a;
+    --base-lighter: #dfe1e2;
+    --base-lightest: #f0f0f0;
+    --accent-warm: #fa9441;
+    --red: #d83933;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
-    background: #fff; color: var(--ink); line-height: 1.5;
-    min-height: 100vh;
-    display: flex; flex-direction: column;
+    font-family: "Public Sans", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+    background: #fff;
+    color: var(--base-darkest);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
   }
-  .bar { background: var(--blue); color: #fff; padding: 8px 20px; font-size: 13px; font-weight: 600; }
-  main { flex: 1; max-width: 560px; margin: 0 auto; padding: 40px 20px; width: 100%; }
+  /* top bar */
+  .topbar {
+    background: var(--primary-darker);
+    color: #fff;
+    padding: 8px 0;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .topbar .inner { max-width: 640px; margin: 0 auto; padding: 0 16px; }
+
+  main { max-width: 640px; margin: 0 auto; padding: 40px 16px 56px; }
+
   .badge {
-    display: inline-block; font-size: 12px; font-weight: 700;
-    letter-spacing: 0.06em; text-transform: uppercase;
-    color: var(--blue); background: var(--blue-light);
-    padding: 4px 10px; margin-bottom: 18px;
+    display: inline-block;
+    background: var(--base-lightest);
+    color: var(--base-darkest);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 4px 10px;
+    margin-bottom: 20px;
+    border: 1px solid var(--base-lighter);
   }
-  h1 { font-size: 26px; font-weight: 700; margin-bottom: 10px; }
-  p { font-size: 15px; margin-bottom: 10px; color: var(--muted); max-width: 46ch; }
-  .construction {
-    border-left: 4px solid var(--blue); background: var(--blue-light);
-    padding: 10px 14px; font-size: 14px; margin: 22px 0 16px;
+
+  h1 { font-size: 28px; font-weight: 700; line-height: 1.25; margin-bottom: 16px; }
+
+  p { font-size: 16px; margin-bottom: 14px; max-width: 60ch; }
+
+  .status {
+    border-left: 4px solid var(--accent-warm);
+    background: var(--base-lightest);
+    padding: 14px 16px;
+    margin-bottom: 20px;
   }
-  .bookmark { font-size: 13px; color: var(--muted); }
-  .bookmark kbd {
-    font-family: inherit; font-size: 12px; background: var(--blue-light);
-    border: 1px solid #c6d6e8; border-radius: 3px; padding: 1px 6px;
+  .status .label {
+    font-size: 12px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.05em; color: var(--base); margin-bottom: 4px;
   }
-  footer { padding: 14px 20px 24px; font-size: 12px; color: var(--muted); }
-  @media (max-width: 600px) { main { padding: 28px 18px; } h1 { font-size: 22px; } }
+  .status .value { font-size: 17px; font-weight: 700; }
+
+  .notice {
+    border: 1px solid var(--base-lighter);
+    padding: 14px 16px;
+    margin-bottom: 20px;
+    font-size: 15px;
+  }
+  .notice strong { display: block; margin-bottom: 4px; }
+
+  ul { margin: 8px 0 14px 20px; }
+  li { font-size: 15px; margin-bottom: 6px; max-width: 60ch; }
+
+  a { color: var(--primary); }
+  a:hover { color: var(--primary-dark); }
+
+  footer {
+    max-width: 640px; margin: 0 auto; padding: 0 16px 32px;
+    font-size: 13px; color: var(--base);
+  }
 </style>
 </head>
 <body>
-<div class="bar">El Niño 2026 Tracker</div>
+<div class="topbar"><div class="inner">El Niño 2026</div></div>
 
 <main>
-  <span class="badge">Coming soon</span>
-  <h1>A plain-language tracker for the 2026 El Niño event.</h1>
-  <p>Current conditions, outlook, and what it could mean for communities — without the jargon.</p>
+  <span class="badge">Under construction</span>
 
-  <div class="construction">
-    <strong>This site is under construction.</strong> The full tracker is being built. In the meantime, the current status from NOAA (issued Aug 13, 2026):
+  <h1>El Niño 2026: plain-language tracker</h1>
+
+  <p>This site will track the 2026 El Niño event with current conditions, outlooks, and what they may mean for communities. It is not affiliated with NOAA or any government agency. It presents public NOAA data without jargon.</p>
+
+  <div class="status">
+    <div class="label">Current status</div>
+    <div class="value">El Niño Advisory active (NOAA, issued Aug 13, 2026)</div>
   </div>
 
-  <p><strong>El Niño Advisory is active</strong> — El Niño is strengthening, with a greater than 90% chance of a very strong event during fall and winter 2026–27.</p>
+  <div class="notice">
+    <strong>This site is under construction.</strong>
+    <p style="margin-bottom:0;">The full tracker is not built yet. This page exists so the status can be shared and the page can be found.</p>
+  </div>
 
-  <p class="bookmark"><strong>Bookmark this page</strong> for updates. Data refreshes with each NOAA diagnostic (next: <span id="next"></span>).</p>
+  <h2 style="font-size:19px; margin:24px 0 10px;">What the current advisory says</h2>
+  <ul>
+    <li>El Niño is strengthening, with a greater than 90% chance of a very strong event during fall and winter 2026-27.</li>
+    <li>There is a 69% chance of a historic event, meaning stronger than any El Niño since 1950.</li>
+    <li>July indices: Ni&ntilde;o-3.4 +1.4&deg;C, Ni&ntilde;o-3 +1.7&deg;C, Ni&ntilde;o-1+2 +2.9&deg;C. Subsurface anomaly +10.0&deg;C.</li>
+  </ul>
+
+  <h2 style="font-size:19px; margin:24px 0 10px;">Updates</h2>
+  <p>Data refreshes after each NOAA diagnostic. The next diagnostic is scheduled for September 10, 2026. Bookmark this page if you want to check back.</p>
+
+  <h2 style="font-size:19px; margin:24px 0 10px;">Source</h2>
+  <p style="margin-bottom:0;">
+    <a href="https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/ensodisc.shtml" target="_blank" rel="noopener">NOAA Climate Prediction Center: ENSO Diagnostic Discussion</a>
+  </p>
 </main>
 
-<footer>Independent, non-commercial tracker. Presents NOAA&rsquo;s public ENSO data in plain language. Not affiliated with NOAA.</footer>
-
-<script>document.getElementById("next").textContent = "September 10, 2026";</script>
+<footer>Independent, non-commercial. Presents NOAA public data in plain language. Not a forecast. Not affiliated with NOAA or the National Weather Service.</footer>
 </body>
 </html>
