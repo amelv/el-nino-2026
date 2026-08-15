@@ -1,0 +1,24 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Learn about El Niño" description="A short, plain-language guide to El Niño, La Niña, and the terms used in this tracker.">
+  <article class="max-w-3xl">
+    <p class="mb-2 text-2xs font-bold uppercase tracking-wide text-primary">A short guide</p>
+    <h2 class="mb-6 text-2xl font-bold text-primary-darker">What is El Niño?</h2>
+    <div class="prose-body">
+      <p>El Niño is a natural warming of the Pacific Ocean near the equator. It can change where rain and storms form, which may shift weather patterns around the world.</p>
+      <p>El Niño is one part of a cycle called ENSO. La Niña is the cooler part of the cycle. These patterns change the odds of certain weather. They do not predict the weather in a specific town.</p>
+    </div>
+
+    <h3 class="mt-10 mb-3 text-xl font-bold text-primary-darker">A few key terms</h3>
+    <div class="accordion" data-accordion>
+      <div class="accordion__item"><button class="accordion__trigger" data-accordion-trigger aria-expanded="false" aria-controls="learn-enso"><span>ENSO</span><span data-accordion-indicator>+</span></button><div class="accordion__panel" id="learn-enso" hidden><p>El Niño-Southern Oscillation: the cycle between El Niño, La Niña, and near-normal conditions.</p></div></div>
+      <div class="accordion__item"><button class="accordion__trigger" data-accordion-trigger aria-expanded="false" aria-controls="learn-anomaly"><span>Anomaly</span><span data-accordion-indicator>+</span></button><div class="accordion__panel" id="learn-anomaly" hidden><p>The difference between a measurement and the long-term average. A plus sign means warmer. A minus sign means cooler.</p></div></div>
+      <div class="accordion__item"><button class="accordion__trigger" data-accordion-trigger aria-expanded="false" aria-controls="learn-oni"><span>ONI</span><span data-accordion-indicator>+</span></button><div class="accordion__panel" id="learn-oni" hidden><p>The Oceanic Niño Index. It is a three-month average for the Niño 3.4 region, a key area of the central Pacific.</p></div></div>
+      <div class="accordion__item"><button class="accordion__trigger" data-accordion-trigger aria-expanded="false" aria-controls="learn-convection"><span>Convection</span><span data-accordion-indicator>+</span></button><div class="accordion__panel" id="learn-convection" hidden><p>Rising warm air that helps clouds and rain form. More convection means more storm activity.</p></div></div>
+      <div class="accordion__item"><button class="accordion__trigger" data-accordion-trigger aria-expanded="false" aria-controls="learn-probability"><span>Forecast probability</span><span data-accordion-indicator>+</span></button><div class="accordion__panel" id="learn-probability" hidden><p>How likely something is according to forecast models. A 90% chance means about 9 chances in 10.</p></div></div>
+    </div>
+  </article>
+  <script>import "../scripts/accordion.js";</script>
+</Layout>

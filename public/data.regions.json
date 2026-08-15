@@ -1,0 +1,61 @@
+{
+  "note": "These notes only report what the current NOAA advisory says. They are not forecasts, and regional effects are not guaranteed.",
+  "regions": [
+    {
+      "id": "central-eastern-pacific",
+      "name": "Central and eastern tropical Pacific",
+      "status": "watch",
+      "impact": "Storms and rain were stronger than usual in the central and eastern Pacific near the equator. Water in the far eastern Pacific was more than 2.0 degrees Celsius warmer than average. This is the main El Niño signal.",
+      "source": "NOAA Climate Prediction Center diagnostic, 13 August 2026"
+    },
+    {
+      "id": "indonesia",
+      "name": "Indonesia and western Pacific",
+      "status": "watch",
+      "impact": "Storms and rain were weaker than usual over Indonesia and the western Pacific. This is the drier side of El Niño.",
+      "source": "NOAA Climate Prediction Center diagnostic, 13 August 2026"
+    },
+    {
+      "id": "south-america",
+      "name": "South America",
+      "status": "coming-soon",
+      "impact": "",
+      "source": ""
+    },
+    {
+      "id": "north-america",
+      "name": "North America",
+      "status": "coming-soon",
+      "impact": "",
+      "source": ""
+    },
+    {
+      "id": "africa",
+      "name": "Africa",
+      "status": "coming-soon",
+      "impact": "",
+      "source": ""
+    },
+    {
+      "id": "asia",
+      "name": "Asia",
+      "status": "coming-soon",
+      "impact": "",
+      "source": ""
+    },
+    {
+      "id": "europe",
+      "name": "Europe",
+      "status": "coming-soon",
+      "impact": "",
+      "source": ""
+    },
+    {
+      "id": "general",
+      "name": "General note for all regions",
+      "status": "watch",
+      "impact": "A strong El Niño makes typical effects more likely, but does not guarantee them. These notes only report what NOAA says.",
+      "source": "NOAA Climate Prediction Center diagnostic, 13 August 2026"
+    }
+  ]
+}

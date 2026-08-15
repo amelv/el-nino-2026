@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="El Niño outlook" description="The latest El Niño forecast and recent ocean temperature trend in plain language.">
+  <article class="max-w-4xl">
+    <p class="mb-2 text-2xs font-bold uppercase tracking-wide text-primary">Looking ahead</p>
+    <h2 class="mb-3 text-2xl font-bold text-primary-darker">What may happen next</h2>
+    <p class="mb-8 max-w-2xl prose-body">This outlook combines several forecast models. It shows how likely El Niño conditions are, not the exact weather for a particular place.</p>
+    <section class="mb-10" aria-labelledby="forecastHeading">
+      <h3 id="forecastHeading" class="mb-4 text-xl font-bold text-primary-darker">Forecast</h3>
+      <div class="border border-gray-20 bg-blue-5 p-5"><p id="forecastBody" class="text-md font-bold">Loading forecast...</p><p id="forecastNote" class="mt-2 text-2xs text-muted"></p></div>
+    </section>
+    <section aria-labelledby="trendHeading">
+      <h3 id="trendHeading" class="mb-4 text-xl font-bold text-primary-darker">Recent ocean trend</h3>
+      <p class="mb-4 max-w-2xl text-sm text-muted">The ONI is the main measure used to identify El Niño and La Niña. The line at +0.5°C marks the El Niño threshold.</p>
+      <div id="oniChart" class="rounded-sm border border-gray-20 bg-white p-4"></div>
+      <div class="oni-chart__legend"><span class="text-warm-deep">El Niño</span><span class="text-warm">Warmer than average</span><span class="text-blue-40">Cooler than average</span></div>
+    </section>
+  </article>
+  <script>import "../scripts/tracker.js";</script>
+</Layout>

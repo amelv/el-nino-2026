@@ -1,0 +1,20 @@
+{
+  "name": "el-nino-2026",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Plain-language El Niño tracker. Independent, non-commercial. Data from NOAA and IRI.",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "astro": "^7.2.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
+}

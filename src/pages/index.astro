@@ -1,0 +1,65 @@
+---
+import Layout from "../layouts/Layout.astro";
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout
+  title="El Niño 2026"
+  description="A simple, plain-language overview of current El Niño conditions and the latest outlook."
+>
+  <div class="max-w-3xl">
+    <section id="statusBox" class="alert alert--info mb-8" aria-live="polite" aria-label="Current El Niño status">
+      <div class="alert__title">
+        <span aria-hidden="true">&#9889;</span>
+        <span id="statusLabel">Loading status...</span>
+      </div>
+      <p id="statusMeaning" class="alert__body">Reading the latest update...</p>
+      <p id="statusWhen" class="mt-2 text-2xs text-muted"></p>
+    </section>
+
+    <section class="mb-10" aria-labelledby="atGlanceHeading">
+      <h2 id="atGlanceHeading" class="mb-4 text-xl font-bold text-primary-darker">El Niño at a glance</h2>
+      <div id="summaryList" class="grid gap-3 sm:grid-cols-3">
+        <div class="border border-gray-20 p-4">Loading...</div>
+      </div>
+    </section>
+
+    <section class="mb-10 max-w-2xl">
+      <h2 class="mb-3 text-xl font-bold text-primary-darker">What is happening?</h2>
+      <p class="prose-body">
+        El Niño is a natural warming of the Pacific Ocean near the equator. It can
+        shift rain, storms, and temperatures around the world.
+      </p>
+      <p class="mt-3 prose-body">
+        It changes the odds of certain weather, but it does not predict the weather
+        in a specific town.
+      </p>
+    </section>
+
+    <section aria-labelledby="nextHeading">
+      <h2 id="nextHeading" class="mb-4 text-xl font-bold text-primary-darker">Explore the tracker</h2>
+      <div class="grid gap-3 sm:grid-cols-2">
+        <a href={`${base}learn/`} class="border border-gray-20 p-4 no-underline hover:bg-blue-5">
+          <strong class="block text-md text-primary">Learn about El Niño</strong>
+          <span class="mt-1 block text-sm text-ink">A short guide to the science and the terms.</span>
+        </a>
+        <a href={`${base}outlook/`} class="border border-gray-20 p-4 no-underline hover:bg-blue-5">
+          <strong class="block text-md text-primary">See the outlook</strong>
+          <span class="mt-1 block text-sm text-ink">What forecast models say may happen next.</span>
+        </a>
+        <a href={`${base}regions/`} class="border border-gray-20 p-4 no-underline hover:bg-blue-5">
+          <strong class="block text-md text-primary">Check regional notes</strong>
+          <span class="mt-1 block text-sm text-ink">Current notes from the NOAA advisory.</span>
+        </a>
+        <a href={`${base}data/`} class="border border-gray-20 p-4 no-underline hover:bg-blue-5">
+          <strong class="block text-md text-primary">View the data</strong>
+          <span class="mt-1 block text-sm text-ink">Ocean temperatures and the recent trend.</span>
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    import "../scripts/tracker.js";
+  </script>
+</Layout>

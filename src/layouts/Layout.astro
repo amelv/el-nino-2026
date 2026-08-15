@@ -1,0 +1,106 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const pageTitle = `${title} | El Niño 2026 Tracker`;
+const base = import.meta.env.BASE_URL;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="color-scheme" content="light" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;700&family=Roboto+Mono:wght@500&display=swap"
+    />
+  </head>
+  <body>
+    <a
+      href="#main"
+      class="skip-link fixed -top-24 left-4 z-50 bg-primary px-4 py-2 font-bold text-white underline-none focus:top-4"
+    >
+      Skip to main content
+    </a>
+
+    <div class="bg-primary-darker text-white">
+      <div class="mx-auto flex max-w-6xl flex-col gap-1 px-5 py-2 text-2xs sm:flex-row sm:items-center sm:justify-between">
+        <p>
+          <strong>Independent tracker.</strong> We are not a government website.
+          We are not affiliated with NOAA, the National Weather Service, or IRI.
+        </p>
+        <p class="text-3xs uppercase tracking-wide text-blue-5">
+          Data refreshes daily
+        </p>
+      </div>
+    </div>
+
+    <header class="border-b-4 border-primary bg-light">
+      <div class="mx-auto max-w-6xl px-5 py-6 sm:py-8">
+        <h1 class="text-2xl font-bold text-primary-darker sm:text-3xl">
+          El Niño 2026 Tracker
+        </h1>
+        <p class="mt-2 max-w-[60ch] text-xs text-muted sm:text-sm">
+          A plain-language summary of current ocean conditions and the latest outlook.
+        </p>
+      </div>
+    </header>
+
+    <nav aria-label="Main navigation" class="border-b border-gray-20 bg-white">
+      <div class="mx-auto flex max-w-6xl gap-1 overflow-x-auto px-5 py-2 text-2xs font-bold">
+        <a href={base} class="whitespace-nowrap px-3 py-2 no-underline hover:bg-blue-5">Overview</a>
+        <a href={`${base}learn/`} class="whitespace-nowrap px-3 py-2 no-underline hover:bg-blue-5">Learn</a>
+        <a href={`${base}outlook/`} class="whitespace-nowrap px-3 py-2 no-underline hover:bg-blue-5">Outlook</a>
+        <a href={`${base}regions/`} class="whitespace-nowrap px-3 py-2 no-underline hover:bg-blue-5">Regions</a>
+        <a href={`${base}data/`} class="whitespace-nowrap px-3 py-2 no-underline hover:bg-blue-5">Data</a>
+      </div>
+    </nav>
+
+    <main id="main" class="mx-auto max-w-6xl px-5 py-8 sm:py-10">
+      <slot />
+    </main>
+
+    <footer class="border-t border-gray-20 bg-gray-5">
+      <div class="mx-auto max-w-6xl px-5 py-8">
+        <div class="grid gap-6 sm:grid-cols-2">
+          <div class="prose-body">
+            <h2 class="mb-2 text-md font-bold text-primary-darker">
+              About this page
+            </h2>
+            <p>
+              This independent, non-commercial project presents public data from
+              NOAA and the IRI/CCSR in plain language.
+            </p>
+            <p>
+              This page is <strong>not a local forecast</strong>. El Niño can change
+              the odds of certain weather, but it cannot tell you exactly what will
+              happen where you live. Check your local National Weather Service
+              office for local weather.
+            </p>
+          </div>
+          <div class="prose-body">
+            <h2 class="mb-2 text-md font-bold text-primary-darker">Sources</h2>
+            <p>
+              NOAA Climate Prediction Center discussion and IRI/CCSR ENSO outlook.
+              Both usually update once a month.
+            </p>
+            <p class="text-2xs text-muted">
+              Updated <span id="fetchedAt">(loading)</span>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

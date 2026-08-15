@@ -1,0 +1,13 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Regional El Niño notes" description="Current regional notes from the NOAA El Niño advisory, written in plain language.">
+  <article class="max-w-3xl">
+    <p class="mb-2 text-2xs font-bold uppercase tracking-wide text-primary">Around the world</p>
+    <h2 class="mb-3 text-2xl font-bold text-primary-darker">Regional notes</h2>
+    <p id="regionsNote" class="mb-8 max-w-2xl text-sm text-muted">Loading the current advisory notes...</p>
+    <div id="regionsList" class="accordion" aria-label="Regional notes"></div>
+  </article>
+  <script>import "../scripts/tracker.js";</script>
+</Layout>
