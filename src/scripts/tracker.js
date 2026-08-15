@@ -337,8 +337,10 @@ function showError(err) {
 
 export function initTracker() {
   initAccordions(document);
-  const base = import.meta.env.BASE_URL;
-  Promise.all([getJSON(`${base}data.json`), getJSON(`${base}data.regions.json` )])
+  const base = import.meta.env.BASE_URL.endsWith("/")
+    ? import.meta.env.BASE_URL
+    : `${import.meta.env.BASE_URL}/`;
+  Promise.all([getJSON(`${base}data.json`), getJSON(`${base}data.regions.json`)])
     .then(([data, regions]) => {
       const when = document.getElementById("fetchedAt");
       if (when) when.textContent = data.fetchedAt ? `on ${data.fetchedAt}` : "recently";
