@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-19",
+  "fetchedAt": "2026-08-20",
   "sources": {
     "oni": true,
     "sstoi": true,
@@ -77,9 +77,6 @@
     "issued": "13 August 2026",
     "next": "10 September 2026"
   },
-  "forecast": {
-    "probText": "El Ni\u00f1o probabilities are 100% from JAS 2026 through JFM",
-    "prob": 100
-  },
+  "forecast": {},
   "errors": []
 }
