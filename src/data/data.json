@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-03",
+  "fetchedAt": "2026-09-04",
   "sources": {
     "oni": true,
     "sstoi": true,
@@ -8,14 +8,10 @@
   },
   "oni": {
     "latest": {
-      "season": "MJJ 2026",
-      "anomaly": 1.39
+      "season": "JJA 2026",
+      "anomaly": 1.8
     },
     "history": [
-      {
-        "season": "JJA 2025",
-        "anomaly": -0.11
-      },
       {
         "season": "JAS 2025",
         "anomaly": -0.26
@@ -59,16 +55,20 @@
       {
         "season": "MJJ 2026",
         "anomaly": 1.39
+      },
+      {
+        "season": "JJA 2026",
+        "anomaly": 1.8
       }
     ]
   },
   "indices": {
     "monthly": {
-      "month": "2026-07",
-      "nino12": 3.56,
-      "nino3": 2.33,
-      "nino4": 1.06,
-      "nino34": 2.03
+      "month": "2026-08",
+      "nino12": 4.08,
+      "nino3": 3.13,
+      "nino4": 0.93,
+      "nino34": 2.52
     }
   },
   "status": {
