@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-09",
+  "fetchedAt": "2026-09-10",
   "sources": {
     "oni": true,
     "sstoi": true,
@@ -74,8 +74,8 @@
   "status": {
     "label": "El Ni\u00f1o Advisory",
     "synopsis": "El Ni\u00f1o is strengthening, with a greater than 90% chance of a very strong event during the Northern Hemisphere fall and winter 2026-27.",
-    "issued": "13 August 2026",
-    "next": "10 September 2026"
+    "issued": "10 September 2026",
+    "next": "8 October 2026"
   },
   "forecast": {},
   "errors": []
