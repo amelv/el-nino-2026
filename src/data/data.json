@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-03",
+  "fetchedAt": "2026-10-04",
   "sources": {
     "oni": true,
     "sstoi": true,
@@ -8,14 +8,10 @@
   },
   "oni": {
     "latest": {
-      "season": "JJA 2026",
-      "anomaly": 1.8
+      "season": "JAS 2026",
+      "anomaly": 2.16
     },
     "history": [
-      {
-        "season": "JAS 2025",
-        "anomaly": -0.26
-      },
       {
         "season": "ASO 2025",
         "anomaly": -0.43
@@ -59,6 +55,10 @@
       {
         "season": "JJA 2026",
         "anomaly": 1.8
+      },
+      {
+        "season": "JAS 2026",
+        "anomaly": 2.16
       }
     ]
   },
