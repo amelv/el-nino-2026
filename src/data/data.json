@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-04",
+  "fetchedAt": "2026-10-06",
   "sources": {
     "oni": true,
     "sstoi": true,
@@ -64,11 +64,11 @@
   },
   "indices": {
     "monthly": {
-      "month": "2026-08",
-      "nino12": 4.08,
-      "nino3": 3.13,
-      "nino4": 0.93,
-      "nino34": 2.52
+      "month": "2026-09",
+      "nino12": 4.69,
+      "nino3": 3.64,
+      "nino4": 0.95,
+      "nino34": 2.84
     }
   },
   "status": {
