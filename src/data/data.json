@@ -1,10 +1,10 @@
 {
-  "fetchedAt": "2026-10-22",
+  "fetchedAt": "2026-10-23",
   "sources": {
     "oni": true,
     "sstoi": true,
     "advisory": true,
-    "iri": false
+    "iri": true
   },
   "oni": {
     "latest": {
@@ -77,7 +77,6 @@
     "issued": "8 October 2026",
     "next": "12 November 2026"
   },
-  "errors": [
-    "iri: HTTP Error 503: Service Unavailable"
-  ]
+  "forecast": {},
+  "errors": []
 }
